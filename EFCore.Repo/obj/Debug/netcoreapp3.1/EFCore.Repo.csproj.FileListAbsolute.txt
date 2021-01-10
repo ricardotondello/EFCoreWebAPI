@@ -1,0 +1,15 @@
+C:\workspace\cursos\EFCoreWebAPI\EFCore.Repo\bin\Debug\netcoreapp3.1\EFCore.Repo.deps.json
+C:\workspace\cursos\EFCoreWebAPI\EFCore.Repo\bin\Debug\netcoreapp3.1\EFCore.Repo.dll
+C:\workspace\cursos\EFCoreWebAPI\EFCore.Repo\bin\Debug\netcoreapp3.1\EFCore.Repo.pdb
+C:\workspace\cursos\EFCoreWebAPI\EFCore.Repo\bin\Debug\netcoreapp3.1\EFCore.Domain.dll
+C:\workspace\cursos\EFCoreWebAPI\EFCore.Repo\bin\Debug\netcoreapp3.1\EFCore.Domain.pdb
+C:\workspace\cursos\EFCoreWebAPI\EFCore.Repo\obj\Debug\netcoreapp3.1\EFCore.Repo.csprojAssemblyReference.cache
+C:\workspace\cursos\EFCoreWebAPI\EFCore.Repo\obj\Debug\netcoreapp3.1\EFCore.Repo.AssemblyInfoInputs.cache
+C:\workspace\cursos\EFCoreWebAPI\EFCore.Repo\obj\Debug\netcoreapp3.1\EFCore.Repo.AssemblyInfo.cs
+C:\workspace\cursos\EFCoreWebAPI\EFCore.Repo\obj\Debug\netcoreapp3.1\EFCore.Repo.csproj.CoreCompileInputs.cache
+C:\workspace\cursos\EFCoreWebAPI\EFCore.Repo\obj\Debug\netcoreapp3.1\EFCore.Repo.csproj.CopyComplete
+C:\workspace\cursos\EFCoreWebAPI\EFCore.Repo\obj\Debug\netcoreapp3.1\EFCore.Repo.dll
+C:\workspace\cursos\EFCoreWebAPI\EFCore.Repo\obj\Debug\netcoreapp3.1\EFCore.Repo.pdb
+C:\workspace\cursos\EFCoreWebAPI\EFCore.Repo\bin\Debug\netcoreapp3.1\EFCore.Repo.runtimeconfig.json
+C:\workspace\cursos\EFCoreWebAPI\EFCore.Repo\bin\Debug\netcoreapp3.1\EFCore.Repo.runtimeconfig.dev.json
+C:\workspace\cursos\EFCoreWebAPI\EFCore.Repo\obj\Debug\netcoreapp3.1\EFCore.Repo.genruntimeconfig.cache

@@ -1,0 +1,9 @@
+C:\workspace\cursos\EFCoreWebAPI\EFCore.Domain\bin\Debug\netcoreapp3.1\EFCore.Domain.deps.json
+C:\workspace\cursos\EFCoreWebAPI\EFCore.Domain\bin\Debug\netcoreapp3.1\EFCore.Domain.dll
+C:\workspace\cursos\EFCoreWebAPI\EFCore.Domain\bin\Debug\netcoreapp3.1\EFCore.Domain.pdb
+C:\workspace\cursos\EFCoreWebAPI\EFCore.Domain\obj\Debug\netcoreapp3.1\EFCore.Domain.csprojAssemblyReference.cache
+C:\workspace\cursos\EFCoreWebAPI\EFCore.Domain\obj\Debug\netcoreapp3.1\EFCore.Domain.AssemblyInfoInputs.cache
+C:\workspace\cursos\EFCoreWebAPI\EFCore.Domain\obj\Debug\netcoreapp3.1\EFCore.Domain.AssemblyInfo.cs
+C:\workspace\cursos\EFCoreWebAPI\EFCore.Domain\obj\Debug\netcoreapp3.1\EFCore.Domain.csproj.CoreCompileInputs.cache
+C:\workspace\cursos\EFCoreWebAPI\EFCore.Domain\obj\Debug\netcoreapp3.1\EFCore.Domain.dll
+C:\workspace\cursos\EFCoreWebAPI\EFCore.Domain\obj\Debug\netcoreapp3.1\EFCore.Domain.pdb
