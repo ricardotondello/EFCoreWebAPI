@@ -1,9 +1,0 @@
-C:\workspace\cursos\EFCoreWebAPI\EFCore.Domain\bin\Debug\netstandard2.0\EFCore.Domain.deps.json
-C:\workspace\cursos\EFCoreWebAPI\EFCore.Domain\bin\Debug\netstandard2.0\EFCore.Domain.dll
-C:\workspace\cursos\EFCoreWebAPI\EFCore.Domain\bin\Debug\netstandard2.0\EFCore.Domain.pdb
-C:\workspace\cursos\EFCoreWebAPI\EFCore.Domain\obj\Debug\netstandard2.0\EFCore.Domain.csprojAssemblyReference.cache
-C:\workspace\cursos\EFCoreWebAPI\EFCore.Domain\obj\Debug\netstandard2.0\EFCore.Domain.AssemblyInfoInputs.cache
-C:\workspace\cursos\EFCoreWebAPI\EFCore.Domain\obj\Debug\netstandard2.0\EFCore.Domain.AssemblyInfo.cs
-C:\workspace\cursos\EFCoreWebAPI\EFCore.Domain\obj\Debug\netstandard2.0\EFCore.Domain.csproj.CoreCompileInputs.cache
-C:\workspace\cursos\EFCoreWebAPI\EFCore.Domain\obj\Debug\netstandard2.0\EFCore.Domain.dll
-C:\workspace\cursos\EFCoreWebAPI\EFCore.Domain\obj\Debug\netstandard2.0\EFCore.Domain.pdb

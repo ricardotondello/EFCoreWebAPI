@@ -1,4 +1,0 @@
-C:\workspace\cursos\EFCoreWebAPI\EFCore.Repo\obj\Debug\netstandard2.0\EFCore.Repo.csprojAssemblyReference.cache
-C:\workspace\cursos\EFCoreWebAPI\EFCore.Repo\obj\Debug\netstandard2.0\EFCore.Repo.AssemblyInfoInputs.cache
-C:\workspace\cursos\EFCoreWebAPI\EFCore.Repo\obj\Debug\netstandard2.0\EFCore.Repo.AssemblyInfo.cs
-C:\workspace\cursos\EFCoreWebAPI\EFCore.Repo\obj\Debug\netstandard2.0\EFCore.Repo.csproj.CoreCompileInputs.cache
