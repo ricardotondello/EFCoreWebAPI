@@ -5,9 +5,7 @@ namespace EFCore.Repo
 {
     public class HeroiContext : DbContext
     {
-        public HeroiContext(DbContextOptions<HeroiContext> options) : base(options)
-        {
-        }
+        public HeroiContext(DbContextOptions<HeroiContext> options) : base(options) { }
         public DbSet<Heroi> Herois { get; set; }
         public DbSet<Batalha> Batalhas { get; set; }
         public DbSet<Arma> Armas { get; set; }
