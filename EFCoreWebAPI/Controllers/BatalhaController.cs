@@ -1,20 +1,19 @@
-using System.Collections.Generic;
 using System;
+using System.Linq;
+using System.Threading.Tasks;
 using EFCore.Domain;
 using EFCore.Repo;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace EFCoreWebAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class HeroiController : ControllerBase
+    public class BatalhaController: ControllerBase
     {
         private readonly IRepository _repo;
-        public HeroiController(IRepository repo)
+        public BatalhaController(IRepository repo)
         {
             _repo = repo;
         }
@@ -24,7 +23,7 @@ namespace EFCoreWebAPI.Controllers
         {
             try
             {
-                return Ok(await _repo.GetAllHerois());
+                return Ok(await _repo.GetAllBatalhas());
             }
             catch(Exception ex)
             {
@@ -32,14 +31,14 @@ namespace EFCoreWebAPI.Controllers
             }
         }
 
-        [HttpGet("{id}", Name="Get")]
+        [HttpGet("{id}", Name="GetBatalha")]
         public async Task<IActionResult> Get(int id)
         {
-            return Ok(await _repo.GetHeroiById(id));
+            return Ok(await _repo.GetBatalhaById(id));
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(Heroi model)
+        public async Task<IActionResult> Post(Batalha model)
         {
             try
             {
@@ -55,11 +54,12 @@ namespace EFCoreWebAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, Heroi model)
+        public async Task<IActionResult> Put(int id, Batalha model)
         {
             try
             {
-                if (await _repo.GetHeroiById(model.Id) == default) throw new Exception($"Heroi com o id: {id} nao existe");
+                if (await _repo.GetBatalhaById(id) == default) throw new Exception($"Batalha com o id: {id} nao existe");
+                    
                 _repo.Update(model);
                 await _repo.SaveChangeAsync();
 
@@ -76,11 +76,11 @@ namespace EFCoreWebAPI.Controllers
         {
             try
             {
-                var model = await _repo.GetHeroiById(id);
-                if (model == default) throw new Exception($"Heroi com o id: {id} nao existe");
-
-                _repo.Update(model);
+                var model = await _repo.GetBatalhaById(id);
+                if (model == default) throw new Exception($"Batalha com o id: {id} nao existe");
+                _repo.Delete(model);
                 await _repo.SaveChangeAsync();
+
                 return Ok(model);
             }
             catch (Exception ex)
