@@ -1,8 +1,7 @@
 namespace EFCore.Domain
 {
-    public class Arma
+    public class Arma : BaseEntity
     {
-        public int Id { get; set; }
         public string Nome { get; set; }
         public Heroi Heroi { get; set; }
         public int HeroiId { get; set; }

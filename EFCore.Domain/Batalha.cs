@@ -3,9 +3,8 @@ using System.Collections.Generic;
 
 namespace EFCore.Domain
 {
-    public class Batalha
+    public class Batalha : BaseEntity
     {
-        public int Id { get; set; }
         public string Nome { get; set; }
         public string Descricao { get; set; }
         public DateTime DtInicio { get; set; }

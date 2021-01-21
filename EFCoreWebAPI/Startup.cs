@@ -1,3 +1,4 @@
+using EFCore.Domain;
 using EFCore.Repo;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -29,7 +30,7 @@ namespace EFCoreWebAPI
             {
                 options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"));
             });
-            services.AddScoped<IRepository, Repository>();
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

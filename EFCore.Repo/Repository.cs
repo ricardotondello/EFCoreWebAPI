@@ -1,93 +1,50 @@
 using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using EFCore.Domain;
 using Microsoft.EntityFrameworkCore;
+using EFCore.Domain;
 
 namespace EFCore.Repo
 {
-    public class Repository : IRepository
+    public class Repository<T> : IRepository<T> where T : BaseEntity
     {
-        readonly HeroiContext _context;
+        private readonly HeroiContext _context;
+        private readonly DbSet<T> _dbSet;
         public Repository(HeroiContext context)
         {
             _context = context;
+            _dbSet = _context.Set<T>();
         }
-        public void Add<T>(T entity) where T : class
+
+        public void Add(T entity)
         {
-            _context.Add(entity);
+            _dbSet.Add(entity);
         }
 
-        public void Delete<T>(T entity) where T : class
+        public void Delete(T entity)
         {
-            _context.Remove(entity);
+            _dbSet.Remove(entity);
         }
 
-        public async Task<IEnumerable<Batalha>> GetAllBatalhas()
+        public async Task<IEnumerable<T>> GetAll()
         {
-            IQueryable<Batalha> query = _context.Batalhas
-                .AsNoTracking()
-                .OrderBy(x=> x.Id);
-
-            return await query.ToArrayAsync();
+            return await _dbSet.ToArrayAsync();
         }
 
-        public async Task<IEnumerable<Heroi>> GetAllHerois()
+        public async Task<T> GetById(int id)
         {
-            IQueryable<Heroi> query = _context.Herois
-                .Include(x => x.Identidade)
-                .Include(x => x.Armas)
-                .AsNoTracking()
-                .OrderBy(x=> x.Id);
-
-            return await query.ToArrayAsync();
+            return await _dbSet.SingleOrDefaultAsync(x => x.Id.Equals(id));
         }
 
-        public async Task<Batalha> GetBatalhaById(int id)
-        {
-            IQueryable<Batalha> query = _context.Batalhas
-                .AsNoTracking()
-                .OrderBy(x=> x.Id);
-
-            return await query
-                .Where(b => b.Id == id)
-                .FirstOrDefaultAsync();
-        }
-
-        public async Task<Heroi> GetHeroiById(int id)
-        {
-            IQueryable<Heroi> query = _context.Herois
-                .Include(x => x.Identidade)
-                .Include(x => x.Armas)
-                .AsNoTracking()
-                .OrderBy(x=> x.Id);
-
-            return await query
-                .Where(b => b.Id == id)
-                .FirstOrDefaultAsync();
-        }
-
-        public async Task<IEnumerable<Heroi>> GetHeroisByName(string nome)
-        {
-            IQueryable<Heroi> query = _context.Herois
-                .Include(x => x.Identidade)
-                .Include(x => x.Armas)
-                .AsNoTracking()
-                .OrderBy(x=> x.Id);
-
-            return await query
-                .Where(h => h.Nome.Contains(nome))
-                .ToListAsync();
-        }
-
-        public async Task<bool> SaveChangeAsync()
+        public async Task<bool> SaveChangesAsync()
         {
             return await _context.SaveChangesAsync() > 0;
         }
 
-        public void Update<T>(T entity) where T : class
+        public void Update(T entity)
         {
-            _context.Update(entity);
-        }
+            _dbSet.Update(entity);
+        }     
+
     }
 }
