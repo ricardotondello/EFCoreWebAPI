@@ -3,11 +3,13 @@ using EFCore.Domain;
 using EFCore.Repo;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace EFCoreWebAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Produces("application/json")]
     public class HeroiController : ControllerBase
     {
         private readonly IRepository<Heroi> _repo;
@@ -17,6 +19,10 @@ namespace EFCoreWebAPI.Controllers
         }
         
         [HttpGet]
+        [ProducesResponseType((200), Type = typeof(List<Heroi>))]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
         public async Task<IActionResult> Get()
         {
             try
@@ -30,12 +36,18 @@ namespace EFCoreWebAPI.Controllers
         }
 
         [HttpGet("{id}", Name="Get")]
+        [ProducesResponseType((200), Type = typeof(Heroi))]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
         public async Task<IActionResult> Get(int id)
         {
             return Ok(await _repo.GetById(id));
         }
 
         [HttpPost]
+        [ProducesResponseType((200), Type = typeof(Heroi))]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
         public async Task<IActionResult> Post(Heroi model)
         {
             try
@@ -52,6 +64,9 @@ namespace EFCoreWebAPI.Controllers
         }
 
         [HttpPut("{id}")]
+        [ProducesResponseType((200), Type = typeof(Heroi))]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
         public async Task<IActionResult> Put(int id, Heroi model)
         {
             try
@@ -69,6 +84,9 @@ namespace EFCoreWebAPI.Controllers
         }
 
         [HttpDelete("{id}")]
+        [ProducesResponseType((200), Type = typeof(Heroi))]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
         public async Task<IActionResult> Delete(int id)
         {
             try

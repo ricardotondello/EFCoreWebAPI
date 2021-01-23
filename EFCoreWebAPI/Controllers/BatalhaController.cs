@@ -8,6 +8,7 @@ namespace EFCoreWebAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Produces("application/json")]
     public class BatalhaController: ControllerBase
     {
         private readonly IRepository<Batalha> _repo;

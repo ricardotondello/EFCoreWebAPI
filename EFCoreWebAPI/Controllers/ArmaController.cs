@@ -7,6 +7,7 @@ namespace EFCoreWebAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Produces("application/json")]
     public class ArmaController: ControllerBase
     {
         private readonly IRepository<Arma> _repo;
