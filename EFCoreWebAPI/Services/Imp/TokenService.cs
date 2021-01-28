@@ -16,20 +16,21 @@ namespace EFCoreWebAPI.Services.Imp
         {
             _config = configuration;
         }
-        public string GenerateAcessToken(IEnumerable<Claim> claims)
+        public string GenerateAccessToken(IEnumerable<Claim> claims)
         {
-           var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.Secret));
-           var signingCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
-           var options = new JwtSecurityToken(
-               issuer: _config.Issuer,
-               audience: _config.Audience,
-               claims: claims,
-               expires: DateTime.Now.AddMinutes(_config.Minutes),
-               signingCredentials: signingCredentials
-           );
+            var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.Secret));
+            var credentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
+            var options = new JwtSecurityToken(
+                issuer: _config.Issuer,
+                audience: _config.Audience,
+                claims: claims,
+                expires: DateTime.Now.AddMinutes(_config.Minutes),
+                signingCredentials: credentials
+            );
 
-           return new JwtSecurityTokenHandler()
-            .WriteToken(options);
+            var token = new JwtSecurityTokenHandler()
+                .WriteToken(options);
+            return token;
         }
 
         public string GenerateRefreshToken()
